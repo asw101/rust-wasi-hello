@@ -7,7 +7,7 @@
 # gh auth token | docker login ghcr.io --username YOURUSERNAME --password-stdin
 
 # # publish using wkg
-# PROJECT_NAME="rust_wasi_hello"
+PROJECT_NAME="rust_wasi_hello"
 
 # if [ -z "$IMAGE_NAME" ]; then
 #   GH_USER=$(gh api user --jq '.login')
