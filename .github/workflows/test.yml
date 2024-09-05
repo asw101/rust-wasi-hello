@@ -35,9 +35,13 @@ jobs:
     # - name: Run build script
     #   run: bash scripts/build.sh
 
-    - name: Log in to GitHub Container Registry
-      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: Run publish script
       env:
         GH_TOKEN: ${{ github.token }}
