@@ -8,7 +8,6 @@ if [ "$GITHUB_ACTIONS" != "true" ]; then
     gh auth token | docker login ghcr.io --username YOURUSERNAME --password-stdin
     GH_USER=$(gh api user --jq '.login')
     IMAGE_NAME="${GH_USER}/rust-wasi-hello"
-    export IMAGE_NAME
 fi
 
 PROJECT_NAME="rust_wasi_hello"
